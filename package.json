@@ -1,6 +1,6 @@
 {
   "name": "jsonresume-theme-engineering-leader",
-  "version": "0.2.1",
+  "version": "1.0",
   "description": "JSON Resume theme for Engineering leaders",
   "keywords": [
     "jsonresume",
@@ -18,7 +18,7 @@
   "license": "MIT",
   "scripts": {
     "start": "resume serve --theme .",
-    "export": "resume export --resume example/resume.json --theme . example/resume.html"
+    "export": "resume export --resume example/resume-example.json --theme . example/resume-example.html"
   },
   "dependencies": {
     "address-format": "0.0.3",

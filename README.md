@@ -39,8 +39,14 @@ npm install
 
 To export your resume, you can run the following command below. This will automatically create a `resume.pdf` file within your current directory:
 
-``` bash
+```bash
 npm run export
+```
+
+If you want to see or modify and example, this project is configured to export a resume from the `example` folder just by running vscode f5.
+
+```bash
+resume export --resume example/resume-example.json --theme . example/resume-example.html
 ```
 
 ## License
