@@ -12,7 +12,7 @@
                 "<node_internals>/**"
             ],
             "runtimeExecutable": "npm",
-            "runtimeArgs": ["run", "export"],
+            "runtimeArgs": ["run", "export-html"],
             "console": "integratedTerminal"
         }
     ]

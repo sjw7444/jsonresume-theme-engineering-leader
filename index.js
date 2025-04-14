@@ -15,14 +15,13 @@ handlebars.registerHelper({
 function render(resume) {
   let dir = __dirname,
     css = fs.readFileSync(dir + '/style.css', 'utf-8'),
-    resumeTemplate = fs.readFileSync(dir + '/resume.hbs', 'utf-8');
+    template = fs.readFileSync(dir + '/resume.hbs', 'utf-8');
 
   let Handlebars = handlebarsWax(handlebars);
 
-  return Handlebars.compile(resumeTemplate)({
-    css: css,
-    resume: resume
-  });
+  // inline the CSS to avoid path related issues while developing
+  const compiled = Handlebars.compile(template);
+  return compiled({ resume: resume, style: `<style>${css}</style>` });
 }
 
 module.exports = {
