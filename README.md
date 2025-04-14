@@ -47,7 +47,7 @@ To export your resume, you can run the following command below. This will automa
 npm run export
 ```
 
-If you want to see or modify and example, this project is configured to export a resume from the `examples` folder just by running vscode f5.
+If you want to see or modify an example, this project is configured to export a resume from the `examples` folder just by running vscode f5.
 
 ```bash
 resume export --resume examples/example-resume.json --theme . examples/example-resume.html
