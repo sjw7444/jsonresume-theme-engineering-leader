@@ -18,7 +18,7 @@
   "license": "MIT",
   "scripts": {
     "start": "resume serve --theme .",
-    "export": "resume export --theme . resume.pdf"
+    "export": "resume export --resume sample-resume.json --theme . sample-resume.html"
   },
   "dependencies": {
     "address-format": "0.0.3",
