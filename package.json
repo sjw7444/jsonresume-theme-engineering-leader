@@ -1,7 +1,7 @@
 {
-  "name": "jsonresume-theme-engineering",
+  "name": "jsonresume-theme-engineering-leader",
   "version": "0.2.1",
-  "description": "JSON Resume theme for engineers",
+  "description": "JSON Resume theme for Engineering leaders",
   "keywords": [
     "jsonresume",
     "jsonresume-theme",
@@ -13,7 +13,7 @@
   "author": "Sören König",
   "repository": {
     "type": "git",
-    "url": "https://github.com/skoenig/jsonresume-theme-engineering"
+    "url": "https://github.com/sjw7444/jsonresume-theme-engineering-leaders"
   },
   "license": "MIT",
   "scripts": {

@@ -1,28 +1,26 @@
-/* Template level */
 body {
-    font-family: Georgia, serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 11px;
-    display: flex;
-    justify-content: center;
-}
-
-#resume {
-    max-width: 800px;
-    width: 100%;
-    padding: 24px 48px;
-    box-sizing: border-box;
+    margin: 24px 48px;
+    line-height: 1.5;
 }
 
 h1 {
     font-size: 26px;
     text-align: center;
-    margin: 5px;
+    margin: 0;
+    line-height: 1.5;
 }
 
 h2 {
     border-width: 1px;
     border-style: none none solid none;
     margin: 10px 0 2.5px 0;
+    line-height: 2em;
+}
+
+h3 {
+    display: inline;
 }
 
 section {
@@ -50,10 +48,17 @@ a {
 
 .item>.item-header>.item-header-title {
     font-weight: bold;
+    white-space: nowrap;
 }
 
 .item>.item-header>.item-header-subtitle {
-    font-style: italic;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.item>.item-header>.item-header-title>.location {
+    font-weight: normal;
+    white-space: nowrap;
 }
 
 .item>.item-details {
@@ -63,6 +68,15 @@ a {
 
 .item>.item-details>.item-details-title {
     font-weight: bold;
+}
+
+.item>.item-details>.date {
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.item>.item-header>.item-header-subtitle>.degree {
+    font-weight: normal;
 }
 
 .clearfix {
@@ -80,10 +94,12 @@ a {
     padding: 0 10px;
 }
 
-.vertical-separator:not(:first-child) {
+/*
+  .vertical-separator:not(:first-child) {
     border-left: 1px solid #000;
     text-align: center;
-}
+  }
+  */
 
 /* Set some print settings. */
 @media print {
@@ -91,19 +107,22 @@ a {
         size: portrait;
         margin: 10mm 25mm;
     }
-    #resume {
+
+    .resume {
         max-width: 100%;
         border: 0px;
         background: #fff;
         box-shadow: none;
         -webkit-box-shadow: none;
     }
+
     body,
     html,
-    #resume {
+    .resume {
         margin: 0px;
         padding: 0px;
     }
+
     .controls {
         display: none;
     }

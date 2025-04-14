@@ -2,43 +2,14 @@ const
   fs = require('fs'),
   handlebars = require('handlebars'),
   handlebarsWax = require('handlebars-wax'),
-  addressFormat = require('address-format'),
-  moment = require('moment'),
   Swag = require('swag');
 
 Swag.registerHelpers(handlebars);
 
 handlebars.registerHelper({
-
-  wrapURL: function (url) {
-    const wrappedUrl = '<a href="' + url + '">' + url.replace(/.*?:\/\//g, '') + "</a>";
-    return new handlebars.SafeString(wrappedUrl);
-  },
-
-  wrapMail: function (address) {
-    const wrappedAddress = '<a href="mailto:' + address + '">' + address + "</a>";
-    return new handlebars.SafeString(wrappedAddress);
-  },
-
-  formatAddress: function (address, city, region, postalCode, countryCode) {
-    let addressList = addressFormat({
-      address: address,
-      city: city,
-      subdivision: region,
-      postalCode: postalCode,
-      countryCode: countryCode
-    });
-
-    return addressList.join('<br/>');
-  },
-
-  formatDate: function (date) {
-    return moment(date).format('MMM YYYY');
-  },
-
-  getValueIfDiffFromPrevious: function (array, index, key) {
-    return (array[index - 1] && (array[index][key] === array[index - 1][key])) ? '' : array[index][key];
-  },
+  isArray: function (value) {
+    return Array.isArray(value);
+  }
 });
 
 function render(resume) {
@@ -47,9 +18,6 @@ function render(resume) {
     resumeTemplate = fs.readFileSync(dir + '/resume.hbs', 'utf-8');
 
   let Handlebars = handlebarsWax(handlebars);
-
-  Handlebars.partials(dir + '/views/**/*.{hbs,js}');
-  Handlebars.partials(dir + '/partials/**/*.{hbs,js}');
 
   return Handlebars.compile(resumeTemplate)({
     css: css,

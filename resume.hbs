@@ -1,25 +1,180 @@
 <!doctype html>
 <html>
-    <head>
+
+<head>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
 
-    <title>{{#resume.basics}}{{name}}{{/resume.basics}}</title>
+    <title>{{ resume.basics.name }}</title>
 
-    <style>
-    {{{css}}}
-    </style>
+    <link rel="stylesheet" href="style.css" />
 
-    </head>
-    <body>
+</head>
+
+<body>
 
     <div id="resume">
-        {{> basics }}
-        {{> skills }}
-        {{> work }}
-        {{> volunteer }}
-        {{> education }}
-        {{> awards }}
-    </body>
+        <section id="basics">
+
+            <h1>{{ resume.basics.name }}</h1>
+
+            <div class="contact centered">
+                {{ resume.basics.location.address }} {{ resume.basics.location.city }}, {{ resume.basics.location.region
+                }}
+                {{ resume.basics.location.postalCode }} {{ resume.basics.location.countryCode }}
+            </div>
+
+            <div class="contact centered">
+                {{#if resume.basics.phone~}}
+                <span>{{ resume.basics.phone }}</span>
+                {{~/if}}
+
+                {{#if resume.basics.email~}}
+                {{#if resume.basics.phone~}}
+                <span>|</span>
+                {{~/if}}
+                {{~/if}}
+
+                {{#if resume.basics.email~}}
+                <span>{{ resume.basics.email }}</span>
+                {{~/if}}
+            </div>
+
+            {{#if basics.url~}}
+            <div class="contact centered">
+                <a href="https://{{resume.basics.url}}">{{resume.basics.url}}</a>
+            </div>
+            {{~/if}}
+
+            {{#if basics.summary}}
+            <div class="summary">
+                {{#if resume.basics.label}}
+                <h2>{{ resume.basics.label }}</h2>
+                {{/if}}
+                {{#unless resume.basics.label}}
+                <h2>Summary</h2>
+                {{/unless}}
+
+                <p>{{ resume.basics.summary }}</p>
+            </div>
+            {{~/if}}
+
+        </section>
+
+        {{#if resume.work.length}}
+        <section id="work">
+            <h2>Experience</h2>
+            {{#each resume.work}}
+
+            <div class="item">
+                <div class="item-header">
+                    <h3 class="item-header-title">
+                        {{company}},
+
+                        {{#if location}}
+                        <span class="location">
+                            {{location.city}}, {{location.region}}
+                        </span>
+                        {{~/if}}
+                    </h3>
+                    <div class="item-header-subtitle">
+                        {{position}}
+                    </div>
+                </div>
+                <div class="item-details">
+                    <div class="date">
+                        {{startDate}} - {{endDate}}
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+
+                <p>{{summary}}</p>
+
+                {{#if highlights.length}}
+                <ul class="highlights">
+                    {{#each highlights}}
+                    {{#if (isArray this)}}
+                    <ul>
+                        {{#each this}}
+                        <li>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                    {{else}}
+                    <li>{{this}}</li>
+                    {{/if}}
+                    {{/each}}
+                </ul>
+                {{/if}}
+            </div>
+            {{/each}}
+        </section>
+        {{/if}}
+
+        {{#if resume.education.length}}
+        <section id="education">
+            <h2>Education</h2>
+
+            {{#each resume.education}}
+            <div class="item">
+                <div class="item-header">
+                    <div class="item-header-title">
+                        {{ institution }}
+
+                        {{#if location}}
+                        <span class="location">
+                            {{location.city}}, {{location.region}} {{location.countryCode}}
+                        </span>
+                        {{~/if}}
+                    </div>
+                    <div class="item-header-subtitle">
+                        <span class="degree">{{ studyType }}, {{ area }}</span>
+                    </div>
+                </div>
+
+                <div class="clearfix"></div>
+            </div>
+            {{/each}}
+        </section>
+        {{/if}}
+
+        {{#if resume.awards.length}}
+        <section id="awards">
+            <h2>Awards &amp; Recognitions</h2>
+            <ul class="item">
+                {{#each resume.awards}}
+                <li>
+                    {{#if title}}
+                    {{#if summary}}
+                    <strong>{{title}}</strong>: {{summary}}
+                    {{else}}
+                    <strong>{{title}}</strong>
+                    {{/if}}
+                    {{/if}}
+                </li>
+                {{/each}}
+            </ul>
+        </section>
+        {{/if}}
+
+        {{#if resume.skills.length}}
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul class="item">
+                {{#each resume.skills}}
+                <li>
+                    {{#if name}}
+                    {{#if keywords.length}}
+                    <strong>{{name}}</strong>: {{#each keywords}}{{.}}{{#unless @last}}, {{/unless}}{{/each}}
+                    {{else}}
+                    <strong>{{name}}</strong>
+                    {{/if}}
+                    {{/if}}
+                </li>
+                {{/each}}
+            </ul>
+        </section>
+        {{/if}}
+</body>
+
 </html>
