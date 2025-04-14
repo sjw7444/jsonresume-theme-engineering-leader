@@ -6,7 +6,7 @@ This is the engineering theme for [JSON Resume](http://jsonresume.org/), based o
 
 <p align="center">
   <kbd>
-    <img src="https://github.com/sjw7444/jsonresume-theme-engineering-leader/blob/main/example/resume.png?raw=true" alt="Richard Hendriks Resume"/>
+    <img src="https://github.com/sjw7444/jsonresume-theme-engineering-leader/blob/main/example-resume.png?raw=true" alt="Richard Hendriks Resume"/>
   </kbd>
 </p>
 
@@ -48,7 +48,7 @@ npm run export
 If you want to see or modify and example, this project is configured to export a resume from the `example` folder just by running vscode f5.
 
 ```bash
-resume export --resume example/resume-example.json --theme . example/resume-example.html
+resume export --resume example-resume.json --theme . example-resume.html
 ```
 
 ## License
@@ -58,3 +58,10 @@ Available under [the MIT license](http://mths.be/mit).
 ## About & Contributing
 
 This is a very small personal project but feel free to contribute and I will do my best to merge fixes and contributions.
+
+### Notes
+
+To make the example png, follow the steps below:
+
+1. Install `brew install poppler`
+2. Run `pdftoppm -png example-resume.pdf example-resume`
