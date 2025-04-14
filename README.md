@@ -4,9 +4,11 @@
 
 This is the engineering theme for [JSON Resume](http://jsonresume.org/), based off of [jsonresume-theme-engineering](https://github.com/skoenig/jsonresume-theme-engineering) and aims to implement the best practices for [engineering resumes](https://www.reddit.com/r/EngineeringResumes/wiki/index/). The original version was intended for [senior/staff level engineers](https://www.reddit.com/r/EngineeringResumes/wiki/index/#wiki_senior_engineers_and_above_.2810.2B_yoe.29) but this version is modified for CTOs/VPs/Directors.
 
+It handles locations of jobs and allows for nested bullets but it renders dates exactly as provided as if they are strings.
+
 <p align="center">
   <kbd>
-    <img src="https://github.com/sjw7444/jsonresume-theme-engineering-leader/blob/main/example-resume.png?raw=true" alt="Richard Hendriks Resume"/>
+    <img src="https://github.com/sjw7444/jsonresume-theme-engineering-leader/blob/main/examples/example-resume.png?raw=true" alt="Richard Hendriks Resume"/>
   </kbd>
 </p>
 
@@ -45,10 +47,10 @@ To export your resume, you can run the following command below. This will automa
 npm run export
 ```
 
-If you want to see or modify and example, this project is configured to export a resume from the `example` folder just by running vscode f5.
+If you want to see or modify and example, this project is configured to export a resume from the `examples` folder just by running vscode f5.
 
 ```bash
-resume export --resume example-resume.json --theme . example-resume.html
+resume export --resume examples/example-resume.json --theme . examples/example-resume.html
 ```
 
 ## License
@@ -61,7 +63,7 @@ This is a very small personal project but feel free to contribute and I will do 
 
 ### Notes
 
-To make the example png, follow the steps below:
+To make the example png, follow the steps below (and then rename and `-1` page extensions):
 
 1. Install `brew install poppler`
-2. Run `pdftoppm -png example-resume.pdf example-resume`
+2. Run `pdftoppm -png examples/example-resume.pdf examples/example-resume`
