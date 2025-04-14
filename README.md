@@ -1,6 +1,8 @@
-# jsonresume-theme-engineering [![Status](https://badge.fury.io/js/jsonresume-theme-engineering-leader.svg)](https://www.npmjs.org/package/jsonresume-theme-engineering-leader)
+# jsonresume-theme-engineering-leader
 
-This is the engineering theme for [JSON Resume](http://jsonresume.org/), based off of [jsonresume-theme-business-professional-compact](https://github.com/yechoorv/jsonresume-theme-business-professional-compact) and aims to implement the best practices for engineering resumes described in https://www.reddit.com/r/EngineeringResumes/wiki/index/. It is intended for [senior/staff level engineers](https://www.reddit.com/r/EngineeringResumes/wiki/index/#wiki_senior_engineers_and_above_.2810.2B_yoe.29).
+[![Status](https://badge.fury.io/js/jsonresume-theme-engineering-leader.svg)](https://www.npmjs.org/package/jsonresume-theme-engineering-leader)
+
+This is the engineering theme for [JSON Resume](http://jsonresume.org/), based off of [jsonresume-theme-engineering](https://github.com/skoenig/jsonresume-theme-engineering) and aims to implement the best practices for [engineering resumes](https://www.reddit.com/r/EngineeringResumes/wiki/index/). The original version was intended for [senior/staff level engineers](https://www.reddit.com/r/EngineeringResumes/wiki/index/#wiki_senior_engineers_and_above_.2810.2B_yoe.29) but this version is modified for CTOs/VPs/Directors.
 
 <p align="center">
   <kbd>
@@ -52,3 +54,7 @@ resume export --resume example/resume-example.json --theme . example/resume-exam
 ## License
 
 Available under [the MIT license](http://mths.be/mit).
+
+## About & Contributing
+
+This is a very small personal project but feel free to contribute and I will do my best to merge fixes and contributions.
