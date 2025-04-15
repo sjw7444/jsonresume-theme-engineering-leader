@@ -31,7 +31,20 @@ jobs:
             pkg.version += '.${{ env.BUILD_NUMBER }}'; \
             require('fs').writeFileSync('package.json', JSON.stringify(pkg, null, 2));"        
 
+      - name: Get version from package.json using Node.js
+        id: get_version
+        run: echo "VERSION=$(node -p \"require('./package.json').version\")" >> $GITHUB_OUTPUT
+          
       - name: Publish to npm
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Create Release
+        uses: ncipollo/release-action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag: v${{ steps.get_version.outputs.VERSION }}
+          name: Release v${{ steps.get_version.outputs.VERSION }}
+          body: ${{ github.event.head_commit.message }}             
