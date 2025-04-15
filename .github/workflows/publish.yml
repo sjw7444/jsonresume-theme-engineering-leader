@@ -22,19 +22,16 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Get build number
-        run: echo "BUILD_NUMBER=${{ github.run_number }}" >> $GITHUB_ENV
-      
       - name: Update package version
         run: |
           node -e "let pkg=require('./package.json'); \
-            pkg.version += '.${{ env.BUILD_NUMBER }}'; \
+            pkg.version += '.${{ github.run_number }}'; \
             require('fs').writeFileSync('package.json', JSON.stringify(pkg, null, 2));"        
 
-      - name: Get version from package.json using Node.js
-        id: get_version
-        run: echo "VERSION=$(node -p \"require('./package.json').version\")" >> $GITHUB_OUTPUT
-          
+      - name: Read package version
+        uses: jaywcjlove/github-action-package@main
+        id: package
+
       - name: Publish to npm
         run: npm publish
         env:
@@ -45,6 +42,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag: v${{ steps.get_version.outputs.VERSION }}
-          name: Release v${{ steps.get_version.outputs.VERSION }}
+          tag: v${{ steps.package.outputs.version }}
+          name: Release v${{ steps.package.outputs.version }}
           body: ${{ github.event.head_commit.message }}             
