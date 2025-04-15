@@ -1,6 +1,8 @@
 # jsonresume-theme-engineering-leader
 
-[![Status](https://badge.fury.io/js/jsonresume-theme-engineering-leader.svg)](https://www.npmjs.org/package/jsonresume-theme-engineering-leader)
+[![npm version](https://badge.fury.io/js/jsonresume-theme-engineering-leader.svg)](https://badge.fury.io/js/jsonresume-theme-engineering-leader)
+
+[![Publish to npm](https://github.com/sjw7444/jsonresume-theme-engineering-leader/actions/workflows/publish.yml/badge.svg)](https://github.com/sjw7444/jsonresume-theme-engineering-leader/actions/workflows/publish.yml)
 
 This is the engineering theme for [JSON Resume](http://jsonresume.org/), based off of [jsonresume-theme-engineering](https://github.com/skoenig/jsonresume-theme-engineering) and aims to implement the best practices for [engineering resumes](https://www.reddit.com/r/EngineeringResumes/wiki/index/). The original version was intended for [senior/staff level engineers](https://www.reddit.com/r/EngineeringResumes/wiki/index/#wiki_senior_engineers_and_above_.2810.2B_yoe.29) but this version is modified for CTOs/VPs/Directors.
 
