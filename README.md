@@ -1,10 +1,18 @@
 # jsonresume-theme-engineering-leader
 
-[![Publish to npm](https://github.com/sjw7444/jsonresume-theme-engineering-leader/actions/workflows/publish.yml/badge.svg)](https://github.com/sjw7444/jsonresume-theme-engineering-leader/actions/workflows/publish.yml) ![NPM Version](https://img.shields.io/npm/v/jsonresume-theme-engineering-leader)
+[![Publish to npm](https://github.com/sjw7444/jsonresume-theme-engineering-leader/actions/workflows/publish.yml/badge.svg)](https://github.com/sjw7444/jsonresume-theme-engineering-leader/actions/workflows/publish.yml) [![NPM Version](https://img.shields.io/npm/v/jsonresume-theme-engineering-leader)](https://www.npmjs.com/package/jsonresume-theme-engineering-leader)
 
 This is the engineering theme for [JSON Resume](http://jsonresume.org/), based off of [jsonresume-theme-engineering](https://github.com/skoenig/jsonresume-theme-engineering) and aims to implement the best practices for [engineering resumes](https://www.reddit.com/r/EngineeringResumes/wiki/index/). The original version was intended for [senior/staff level engineers](https://www.reddit.com/r/EngineeringResumes/wiki/index/#wiki_senior_engineers_and_above_.2810.2B_yoe.29) but this version is modified for CTOs/VPs/Directors.
 
 It handles locations of jobs and allows for nested bullets but it renders dates exactly as provided as if they are strings.
+
+## Using this theme
+
+This theme is available on NPM as [jsonresume-theme-engineering-leader](https://www.npmjs.com/package/jsonresume-theme-engineering-leader) and can be installed by running `npm install jsonresume-theme-engineering-leader`.
+
+If you are building your resume from a resume.json file and resume-cli then simply run `resume export --theme engineering-leader`.
+
+## Example Resume
 
 <p align="center">
   <kbd>
@@ -12,7 +20,7 @@ It handles locations of jobs and allows for nested bullets but it renders dates 
   </kbd>
 </p>
 
-## Getting started
+## Getting started with Development
 
 To get started with theme development, this is what you'll need:
 
