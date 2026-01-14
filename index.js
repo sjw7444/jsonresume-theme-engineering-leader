@@ -1,10 +1,7 @@
 const
   fs = require('fs'),
   handlebars = require('handlebars'),
-  handlebarsWax = require('handlebars-wax'),
-  Swag = require('swag');
-
-Swag.registerHelpers(handlebars);
+  handlebarsWax = require('handlebars-wax');
 
 handlebars.registerHelper({
   isArray: function (value) {
