@@ -19,14 +19,13 @@
   "scripts": {
     "start": "resume serve --theme .",
     "export-html": "resume export --resume examples/example-resume.json --theme ./ examples/example-resume.html",
-    "export-pdf": "resume export --resume examples/example-resume.json --theme ./ examples/example-resume.pdf"
+    "export-pdf": "PUPPETEER_EXECUTABLE_PATH=\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" resume export --resume examples/example-resume.json --theme ./ examples/example-resume.pdf"
   },
   "dependencies": {
     "address-format": "0.0.3",
     "handlebars": "^4.7.8",
     "handlebars-wax": "^6.1.0",
-    "moment": "^2.30.1",
-    "swag": "^0.7.0"
+    "moment": "^2.30.1"
   },
   "devDependencies": {
     "resume-cli": "^3.1.2"
