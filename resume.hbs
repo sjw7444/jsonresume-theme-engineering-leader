@@ -111,6 +111,55 @@
         </section>
         {{/if}}
 
+        {{#if resume.advisory.length}}
+        <section id="advisory">
+            <h2>Advising & Mentoring</h2>
+            {{#each resume.advisory}}
+
+            <div class="item">
+                <div class="item-header">
+                    <h3 class="item-header-title">
+                        {{organization}},
+
+                        {{#if location}}
+                        <span class="location">
+                            {{location.city}}, {{location.region}}
+                        </span>
+                        {{~/if}}
+                    </h3>
+                    <div class="item-header-subtitle">
+                        {{position}}
+                    </div>
+                </div>
+                <div class="item-details">
+                    <div class="date">
+                        {{startDate}} - {{endDate}}
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+
+                <p>{{summary}}</p>
+
+                {{#if highlights.length}}
+                <ul class="highlights">
+                    {{#each highlights}}
+                    {{#if (isArray this)}}
+                    <ul>
+                        {{#each this}}
+                        <li>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                    {{else}}
+                    <li>{{this}}</li>
+                    {{/if}}
+                    {{/each}}
+                </ul>
+                {{/if}}
+            </div>
+            {{/each}}
+        </section>
+        {{/if}}
+
         {{#if resume.education.length}}
         <section id="education">
             <h2>Education</h2>

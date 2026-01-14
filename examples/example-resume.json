@@ -97,6 +97,24 @@
       ]
     }
   ],
+  "advisory": [
+    {
+      "organization": "Not Hotdog",
+      "position": "Advisor",
+      "website": "http://nothotdog.com/",
+      "startDate": "01/2012",
+      "endDate": "01/2013",
+      "summary": "Not Hotdog is a company that makes a product that helps people detect if a food is hotdog or not.",
+      "highlights": [
+        "Helped the company launch a new product"
+      ],
+      "location": {
+        "city": "Palo Alto",
+        "countryCode": "US",
+        "region": "CA"
+      }
+    }
+  ],
   "education": [
     {
       "institution": "Stanford",
